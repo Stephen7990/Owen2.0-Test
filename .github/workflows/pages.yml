@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:notepad .github\workflows\pages.yml
     runs-on: ubuntu-latest
 
     steps:
