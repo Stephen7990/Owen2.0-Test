@@ -143,10 +143,10 @@ export function Gallery() {
               PROJECT 03 — BUILD PROCESS
             </div>
             <h3 className="text-white text-2xl mb-2">
-              Custom Structural Fabrication
+              Custom Shipping Container Access Door
             </h3>
             <p className="text-muted-foreground">
-              Step-by-step progression from raw steel cutting and welding to final site installation.
+              Wall cutout, galvanized steel sub-frame fabrication, and secure roller door fitment.
             </p>
           </div>
 
