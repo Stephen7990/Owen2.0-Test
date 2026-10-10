@@ -26,15 +26,15 @@ export function Gallery() {
 
   // Define image arrays for your progress projects (3 images each)
   const project3Images = [
-    '/Owen2.0-Test/images/3A.jpg',
-    '/Owen2.0-Test/images/3B.jpg',
-    '/Owen2.0-Test/images/3C.jpg',
+    '/Owen2.0-Test/images/3A.webp',
+    '/Owen2.0-Test/images/3B.webp',
+    '/Owen2.0-Test/images/3C.webp',
   ];
 
   const project4Images = [
-    '/Owen2.0-Test/images/4A.png',
-    '/Owen2.0-Test/images/4B.png',
-    '/Owen2.0-Test/images/4C.png',
+    '/Owen2.0-Test/images/4A.webp',
+    '/Owen2.0-Test/images/4B.webp',
+    '/Owen2.0-Test/images/4C.webp',
   ];
 
   return (
@@ -48,14 +48,14 @@ export function Gallery() {
           <div className="border-2 border-border hover:border-primary transition-all duration-300 p-4">
             <div className="aspect-video overflow-hidden mb-4 relative">
               <img 
-                src="/Owen2.0-Test/images/1A.png" 
+                src="/Owen2.0-Test/images/1A.webp" 
                 alt="Carport Feature Wall - Before" 
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   showSecondImage ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <img 
-                src="/Owen2.0-Test/images/1B.png" 
+                src="/Owen2.0-Test/images/1B.webp" 
                 alt="Carport Feature Wall - After" 
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   showSecondImage ? 'opacity-100' : 'opacity-0'
@@ -83,14 +83,14 @@ export function Gallery() {
           <div className="border-2 border-border hover:border-primary transition-all duration-300 p-4">
             <div className="aspect-video overflow-hidden mb-4 relative">
               <img 
-                src="/Owen2.0-Test/images/2A.png" 
+                src="/Owen2.0-Test/images/2A.webp" 
                 alt="Verandah Plantation Shutter Enclosure - Before" 
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   showSecondImage ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <img 
-                src="/Owen2.0-Test/images/2B.png" 
+                src="/Owen2.0-Test/images/2B.webp" 
                 alt="Verandah Plantation Shutter Enclosure - After" 
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   showSecondImage ? 'opacity-100' : 'opacity-0'
