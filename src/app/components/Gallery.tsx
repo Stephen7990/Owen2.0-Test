@@ -174,10 +174,10 @@ export function Gallery() {
               PROJECT 04 — BUILD PROCESS
             </div>
             <h3 className="text-white text-2xl mb-2">
-              Decking & Timber Renovation
+              Structural Steel Mezzanine Build
             </h3>
             <p className="text-muted-foreground">
-              Full build sequence covering frame setup, joist preparation, board layout, and finishing stains.
+              Custom steel column and floor framing installation to maximize second-story storage space, complete with safety handrails and access stairs.
             </p>
           </div>
 
