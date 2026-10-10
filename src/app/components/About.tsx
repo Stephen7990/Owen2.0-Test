@@ -49,7 +49,7 @@ export function About() {
 
             <div className="space-y-4 text-muted-foreground mb-8">
               <p className="text-lg leading-relaxed">
-                With over 12 years of hands-on experience in the
+                With over 13 years of hands-on experience in the
                 industry, Affordable Fix & Fab has built a
                 reputation for delivering top-quality
                 boilermaking and fabrication services at
@@ -79,7 +79,7 @@ export function About() {
                   icon: Award,
                   text: "Fully Licensed & Insured",
                 },
-                { icon: Clock, text: "24/7 Emergency Service" },
+                { icon: Clock, text: "South Australia Based" },
                 { icon: Users, text: "Experienced Team" },
                 {
                   icon: CheckCircle2,
@@ -147,7 +147,7 @@ export function About() {
 
               <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-2 border border-primary/50">
                 <div className="text-primary font-mono text-xs">
-                  15+ YRS EXP
+                  13+ YRS EXP
                 </div>
               </div>
             </div>

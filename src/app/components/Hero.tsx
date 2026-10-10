@@ -113,9 +113,9 @@ export function Hero() {
             className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { value: '12+', label: 'Years Experience' },
+              { value: '13+', label: 'Years Experience' },
               { value: '200+', label: 'Projects Completed' },
-              { value: 'Available', label: 'Emergency Service' },
+              { value: 'South Australia', label: 'Based & Operated' },
             ].map((stat, i) => (
               <div key={i} className="relative">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary" />
