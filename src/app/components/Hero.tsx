@@ -115,7 +115,7 @@ export function Hero() {
             {[
               { value: '13+', label: 'Years Experience' },
               { value: '200+', label: 'Projects Completed' },
-              { value: 'South Australia', label: 'Based & Operated' },
+              { value: 'SA', label: 'Based & Operated' },
             ].map((stat, i) => (
               <div key={i} className="relative">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary" />
