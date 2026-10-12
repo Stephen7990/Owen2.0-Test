@@ -4,14 +4,14 @@ import { Flame, Wrench, Settings, Hammer, Shield, Zap } from 'lucide-react';
 const services = [
   {
     icon: Flame,
-    title: 'Welding Services',
-    description: 'MIG, TIG, and Arc welding for all metals. Certified welders with expertise in structural and precision work.',
+    title: 'Professional Boilermaking Services',
+    description: 'Steel Fabrication, MIG & Arc Welding & Repairs',
     image: 'https://images.unsplash.com/photo-1759847552281-60e45956124d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
     icon: Settings,
     title: 'Metal Fabrication',
-    description: 'Custom metal fabrication including gates, railings, stairs, and structural steelwork. Built to your exact specifications.',
+    description: 'Built to your specifications.',
     image: 'https://images.unsplash.com/photo-1773966071353-0956f870e034?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHdvcmslMjBzdGVlbCUyMGZhYnJpY2F0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
@@ -27,15 +27,9 @@ const services = [
     image: 'https://images.unsplash.com/photo-1569950044193-3da491803b90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxtZXRhbCUyMHdvcmslMjBzdGVlbCUyMGZhYnJpY2F0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    icon: Shield,
-    title: 'Safety Rails & Guards',
-    description: 'Industrial safety barriers, machine guards, and fall protection systems. Compliant with all safety standards.',
-    image: 'https://images.unsplash.com/photo-1763684041948-f254c06b1a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
-  },
-  {
     icon: Zap,
-    title: 'Emergency Callout',
-    description: 'Emergency service for urgent repairs and breakdowns. Rapid response to minimize your downtime.',
+    title: 'Fast Turn Around',
+    description: 'Fast service for urgent repairs and breakdowns to minimize your downtime.',
     image: 'https://images.unsplash.com/photo-1762786478154-4678312f9ad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw3fHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
 ];

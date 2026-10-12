@@ -59,7 +59,7 @@ export function About() {
                 Whether it's a small repair job or a major
                 fabrication project, we bring the same level of
                 precision, professionalism, and dedication to
-                every task. Our team is fully certified,
+                every task.
                 insured, and equipped to handle projects of any
                 scale.
               </p>
@@ -83,7 +83,7 @@ export function About() {
                 { icon: Users, text: "Experienced Team" },
                 {
                   icon: CheckCircle2,
-                  text: "Quality Guaranteed",
+                  text: "Accurate Workmanship Commitment",
                 },
               ].map((item, i) => (
                 <div

@@ -101,7 +101,6 @@ export function Footer() {
               <li>Repairs & Maintenance</li>
               <li>Structural Steel</li>
               <li>Safety Rails & Guards</li>
-              <li>Emergency Callout</li>
             </ul>
           </div>
 
@@ -138,7 +137,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                  Adelaide & Surrounding Areas
+                  Northern suburbs and surrounding  
                 </span>
               </li>
             </ul>

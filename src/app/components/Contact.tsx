@@ -115,7 +115,7 @@ export function Contact() {
                     href="tel:0412 677 236"
                     className="text-muted-foreground hover:text-primary transition-colors text-lg"
                   >
-                    0412 345 678
+                    0412 677 236
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Here When You Need Us</p>
                 </div>
@@ -162,7 +162,7 @@ export function Contact() {
                     Service Area
                   </h3>
                   <p className="text-muted-foreground">
-                    Adelaide & Surrounding Areas
+                    Northern suburbs and surrounding  
                   </p>
                   <p className="text-sm text-muted-foreground mt-1">Mobile service available</p>
                 </div>
@@ -175,7 +175,7 @@ export function Contact() {
                 Why Choose Us?
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>✓ Free, no-obligation quotes</li>
+                <li>✓ no-obligation quotes</li>
                 <li>✓ Fully insured & certified</li>
                 <li>✓ Competitive pricing</li>
                 <li>✓ Quality workmanship guaranteed</li>
@@ -261,7 +261,6 @@ export function Contact() {
                       <option value="repairs">Repairs & Maintenance</option>
                       <option value="structural">Structural Steel</option>
                       <option value="safety">Safety Rails & Guards</option>
-                      <option value="emergency">Emergency Callout</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
