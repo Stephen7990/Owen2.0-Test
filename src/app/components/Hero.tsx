@@ -90,7 +90,7 @@ export function Hero() {
               className="px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider group relative overflow-hidden"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.25rem' }}
             >
-              <span className="relative z-10">Request Free Quote</span>
+              <span className="relative z-10">Request a Quote</span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
 

@@ -1,35 +1,41 @@
 import { motion } from 'motion/react';
-import { Flame, Wrench, Settings, Hammer, Shield, Zap } from 'lucide-react';
+import { Hammer, Wrench, Factory, Fence, Truck, Clock3 } from 'lucide-react';
 
 const services = [
   {
-    icon: Flame,
-    title: 'Professional Boilermaking Services',
-    description: 'Steel Fabrication, MIG & Arc Welding & Repairs',
+    icon: Hammer,
+    title: 'Custom Steel Fabrication',
+    description: 'Made-to-measure steel frames, brackets, cleats, posts, components and one-off fabrications built to your specifications.',
     image: 'https://images.unsplash.com/photo-1759847552281-60e45956124d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    icon: Settings,
-    title: 'Metal Fabrication',
-    description: 'Built to your specifications.',
+    icon: Wrench,
+    title: 'Welding Repairs',
+    description: 'Repairs to steel gates, hinges, fences, brackets and suitable machinery or equipment components.',
     image: 'https://images.unsplash.com/photo-1773966071353-0956f870e034?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHdvcmslMjBzdGVlbCUyMGZhYnJpY2F0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    icon: Wrench,
-    title: 'Repairs & Maintenance',
-    description: 'On-site repairs for machinery, equipment, and structural damage. Fast turnaround for emergency breakdowns.',
+    icon: Factory,
+    title: 'Commercial & Industrial Fabrication',
+    description: 'Custom components, metal furniture, modifications and maintenance work for builders, fencing contractors and local businesses.',
     image: 'https://images.unsplash.com/photo-1771591201020-5cd2ba14e731?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    icon: Hammer,
-    title: 'Structural Steel',
-    description: 'Industrial steel erection, modifications, and installations. Experienced in commercial and residential projects.',
+    icon: Fence,
+    title: 'Gates, Frames & Steelwork',
+    description: 'Custom steel gates, posts, frames, handrails, barriers and other made-to-order steelwork.',
     image: 'https://images.unsplash.com/photo-1569950044193-3da491803b90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxtZXRhbCUyMHdvcmslMjBzdGVlbCUyMGZhYnJpY2F0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    icon: Zap,
-    title: 'Fast Turn Around',
-    description: 'Fast service for urgent repairs and breakdowns to minimize your downtime.',
+    icon: Truck,
+    title: 'Mobile Welding & Installation',
+    description: 'On-site welding, steel installations and modifications where practical, including repairs to existing steelwork.',
+    image: 'https://images.unsplash.com/photo-1762786478154-4678312f9ad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw3fHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  },
+  {
+    icon: Clock3,
+    title: 'Fast Turnaround',
+    description: 'Prompt fabrication and repair services with clear communication and realistic timeframes.',
     image: 'https://images.unsplash.com/photo-1762786478154-4678312f9ad6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw3fHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
 ];
@@ -130,10 +136,10 @@ export function Services() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {service.description}
                 </p>
-
-                {/* Corner accent */}
-                <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[40px] border-b-primary/20 border-l-[40px] border-l-transparent group-hover:border-b-primary/40 transition-colors" />
               </div>
+
+              {/* Corner accent */}
+              <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[40px] border-b-primary/20 border-l-[40px] border-l-transparent group-hover:border-b-primary/40 transition-colors" />
 
               {/* Technical marks */}
               <div className="absolute top-2 right-2 text-primary/20 font-mono text-xs group-hover:text-primary/40 transition-colors">
@@ -153,7 +159,7 @@ export function Services() {
         >
           <div className="inline-block bg-background border-2 border-primary/30 p-8">
             <p className="text-white text-lg mb-4">
-              Need a custom solution? We're here to help.
+              Have something unusual that needs making, modifying or repairing? Get in touch to discuss your project.
             </p>
             <button
               onClick={() => {

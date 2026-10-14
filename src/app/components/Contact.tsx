@@ -83,8 +83,7 @@ export function Contact() {
             Request A Quote
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to start your project? Fill out the form below and we'll get back to you
-            within 24 hours with a competitive quote.
+            We aim to respond to enquiries within 24 hours.
           </p>
         </motion.div>
 
