@@ -1,7 +1,18 @@
 import { Wrench, Phone, Mail, MapPin, Facebook, MessageCircle, Linkedin } from 'lucide-react';
+import { Link, useNavigate } from 'react-router';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(`/?section=${id}`);
+    }
+  };
 
   return (
     <footer className="relative bg-background border-t-2 border-primary overflow-hidden">
@@ -76,7 +87,7 @@ export function Footer() {
                   <button
                     onClick={() => {
                       const id = link.toLowerCase();
-                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                      scrollToSection(id);
                     }}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
@@ -84,6 +95,14 @@ export function Footer() {
                   </button>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/gallery"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  Gallery
+                </Link>
+              </li>
             </ul>
           </div>
 

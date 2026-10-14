@@ -1,14 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X, Wrench } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(`/?section=${id}`);
+    }
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    const section = new URLSearchParams(location.search).get('section');
+    if (location.pathname !== '/' || !section) return;
+
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [location]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-2 border-primary">
@@ -60,6 +78,14 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            <Link
+              to="/gallery"
+              className="text-white hover:text-primary transition-colors uppercase tracking-wider relative group"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem' }}
+            >
+              Gallery
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="px-6 py-2 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider"
@@ -95,6 +121,14 @@ export function Header() {
                 {item.label}
               </button>
             ))}
+            <Link
+              to="/gallery"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full text-left text-white hover:text-primary transition-colors uppercase tracking-wider text-xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
+              Gallery
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="w-full px-6 py-3 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider text-xl"
