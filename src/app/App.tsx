@@ -6,13 +6,16 @@ import { About } from "./components/About";
 import { Gallery } from "./components/Gallery";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { PhotoStrip } from "./components/PhotoStrip";
 
 function HomePage() {
   return (
     <>
       <Hero />
+      <PhotoStrip images={["Top.webp", "Top (2).webp"]} label="Featured project photos" />
       <Services />
       <About />
+      <PhotoStrip images={["Bottom.webp", "BOttom (2).webp"]} label="More project photos" />
       <Contact />
     </>
   );

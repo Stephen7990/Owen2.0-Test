@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stephen7990.github.io/Owen2.0-Test/sitemap.xml

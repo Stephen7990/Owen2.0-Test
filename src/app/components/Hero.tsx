@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { ArrowDown } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -8,7 +7,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1745448797905-36e057c09088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWxkaW5nJTIwc3BhcmtzJTIwaW5kdXN0cmlhbCUyMG1ldGFsJTIwZmFicmljYXRpb258ZW58MXx8fHwxNzc2MTUzOTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Welding sparks"
+          alt="Welder joining metal with bright welding sparks"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
@@ -85,7 +84,7 @@ export function Hero() {
           >
             <button
               onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('#contact h2')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider group relative overflow-hidden"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.25rem' }}
@@ -133,20 +132,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <ArrowDown className="w-6 h-6 text-primary" />
-          </motion.div>
-        </motion.div>
       </div>
 
       {/* Bottom border */}

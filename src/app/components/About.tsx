@@ -120,7 +120,7 @@ export function About() {
                 className="w-full aspect-[4/3] object-cover"
               >
                 <source
-                  src="/Owen2.0-Test/Welding.mp4"
+                  src={`${import.meta.env.BASE_URL}Welding.mp4`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

@@ -6,7 +6,10 @@ export function Footer() {
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+    const section = document.getElementById(id);
+    const element = id === 'contact'
+      ? section?.querySelector('h2') ?? section
+      : section;
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -136,7 +139,7 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="tel:0412345678"
+                    href="tel:+61412677236"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     0412 677 236
@@ -147,7 +150,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <a
-                  href="mailto:info@affordablefixfab.com.au"
+                  href="mailto:affordablefixandfab@outlook.com"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
                 >
                   affordablefixandfab@outlook.com

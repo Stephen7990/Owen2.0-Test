@@ -11,10 +11,14 @@ export function Contact() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
+    setIsSubmitting(true);
+    setSubmissionError('');
 
     try {
       const response = await fetch(form.action, {
@@ -31,9 +35,14 @@ export function Contact() {
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
+      } else {
+        setSubmissionError('Your request could not be sent. Please try again or contact us by phone or email.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmissionError('Your request could not be sent. Please check your connection and try again, or contact us by phone or email.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -83,7 +92,7 @@ export function Contact() {
             Request A Quote
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We aim to respond to enquiries within 24 hours.
+            We aim to respond to enquiries within one business day.
           </p>
         </motion.div>
 
@@ -111,7 +120,7 @@ export function Contact() {
                     Call Us
                   </h3>
                   <a
-                    href="tel:0412 677 236"
+                    href="tel:+61412677236"
                     className="text-muted-foreground hover:text-primary transition-colors text-lg"
                   >
                     0412 677 236
@@ -136,7 +145,7 @@ export function Contact() {
                     Email Us
                   </h3>
                   <a
-                    href="mailto:info@affordablefixfab.com.au"
+                    href="mailto:affordablefixandfab@outlook.com"
                     className="text-muted-foreground hover:text-primary transition-colors break-all"
                   >
                     affordablefixandfab@outlook.com
@@ -199,11 +208,12 @@ export function Contact() {
                   className="space-y-6"
                 >
                   <div>
-                    <label className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
+                    <label htmlFor="contact-name" className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
                       Your Name *
                     </label>
                     <input
                       type="text"
+                      id="contact-name"
                       name="name"
                       required
                       value={formData.name}
@@ -214,11 +224,12 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
+                    <label htmlFor="contact-phone" className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
                       Phone Number *
                     </label>
                     <input
                       type="tel"
+                      id="contact-phone"
                       name="phone"
                       required
                       value={formData.phone}
@@ -229,11 +240,12 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
+                    <label htmlFor="contact-email" className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
                       Email Address *
                     </label>
                     <input
                       type="email"
+                      id="contact-email"
                       name="email"
                       required
                       value={formData.email}
@@ -244,10 +256,11 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
+                    <label htmlFor="contact-service" className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
                       Service Required *
                     </label>
                     <select
+                      id="contact-service"
                       name="service"
                       required
                       value={formData.service}
@@ -265,10 +278,11 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
+                    <label htmlFor="contact-message" className="block text-primary uppercase tracking-wider text-sm font-semibold mb-2">
                       Project Details *
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       required
                       value={formData.message}
@@ -281,13 +295,20 @@ export function Contact() {
 
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider group relative overflow-hidden flex items-center justify-center gap-3"
                     style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.25rem' }}
                   >
-                    <span className="relative z-10">Send Quote Request</span>
-                    <Send className="w-5 h-5 relative z-10" />
+                    <span className="relative z-10">{isSubmitting ? 'Sending...' : 'Send Quote Request'}</span>
+                    {!isSubmitting && <Send className="w-5 h-5 relative z-10" />}
                     <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                   </button>
+
+                  {submissionError && (
+                    <p role="alert" className="text-center text-red-400">
+                      {submissionError}
+                    </p>
+                  )}
 
                   <p className="text-center text-muted-foreground text-sm">
                     We respect your privacy. Your information will never be shared.

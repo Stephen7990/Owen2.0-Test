@@ -8,7 +8,10 @@ export function Header() {
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+    const section = document.getElementById(id);
+    const element = id === 'contact'
+      ? section?.querySelector('h2') ?? section
+      : section;
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -21,11 +24,15 @@ export function Header() {
     const section = new URLSearchParams(location.search).get('section');
     if (location.pathname !== '/' || !section) return;
 
-    const frame = requestAnimationFrame(() => {
-      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-    });
+    const timeout = window.setTimeout(() => {
+      const target = document.getElementById(section);
+      const element = section === 'contact'
+        ? target?.querySelector('h2') ?? target
+        : target;
+      element?.scrollIntoView({ behavior: 'auto' });
+    }, 50);
 
-    return () => cancelAnimationFrame(frame);
+    return () => window.clearTimeout(timeout);
   }, [location]);
 
   return (
@@ -72,7 +79,7 @@ export function Header() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="text-white hover:text-primary transition-colors uppercase tracking-wider relative group"
-                style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem' }}
+                style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem', fontWeight: 600 }}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -81,7 +88,7 @@ export function Header() {
             <Link
               to="/gallery"
               className="text-white hover:text-primary transition-colors uppercase tracking-wider relative group"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem' }}
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem', fontWeight: 600 }}
             >
               Gallery
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -116,7 +123,7 @@ export function Header() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="block w-full text-left text-white hover:text-primary transition-colors uppercase tracking-wider text-xl"
-                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600 }}
               >
                 {item.label}
               </button>
@@ -125,7 +132,7 @@ export function Header() {
               to="/gallery"
               onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left text-white hover:text-primary transition-colors uppercase tracking-wider text-xl"
-              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600 }}
             >
               Gallery
             </Link>

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Hammer, Wrench, Factory, Fence, Truck, Clock3 } from 'lucide-react';
+import { PhotoStrip } from './PhotoStrip';
 
 const services = [
   {
@@ -89,9 +90,13 @@ export function Services() {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
             From small repairs to large-scale fabrication projects, we provide comprehensive
-            metalwork solutions across all industries.
+            metalwork solutions.
           </p>
         </motion.div>
+
+        <div className="mb-12 -mx-6">
+          <PhotoStrip images={['MID.webp', 'Mid (2).webp']} label="Workshop project photos" />
+        </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -108,7 +113,7 @@ export function Services() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} welding and metalwork`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -163,7 +168,7 @@ export function Services() {
             </p>
             <button
               onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('#contact h2')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="px-8 py-3 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider"
               style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem' }}

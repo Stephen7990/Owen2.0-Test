@@ -1,51 +1,138 @@
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router';
 
 const projects = [
   {
     number: '01',
-    title: 'Custom Carport Feature Wall',
-    description:
-      'Replaced weathered sheeting with custom vertical timber slat screening for improved privacy and aesthetics.',
-    beforeAfter: {
-      before: '/Owen2.0-Test/images/1A.webp',
-      after: '/Owen2.0-Test/images/1B.webp',
-    },
+    title: 'Before & After',
+    images: ['Before.jpg', 'After.jpg'],
   },
   {
     number: '02',
-    title: 'Verandah Plantation Shutter Enclosure',
-    description:
-      'Custom framing and white plantation shutter installation for outdoor deck privacy and weather protection.',
-    beforeAfter: {
-      before: '/Owen2.0-Test/images/2A.webp',
-      after: '/Owen2.0-Test/images/2B.webp',
-    },
+    title: 'Bollard',
+    images: ['Bollard.jpg', 'Bollard 2.jpg'],
   },
   {
     number: '03',
-    title: 'Custom Shipping Container Access Door',
-    description:
-      'Wall cutout, galvanized steel sub-frame fabrication, and secure roller door fitment.',
-    stages: [
-      '/Owen2.0-Test/images/3A.webp',
-      '/Owen2.0-Test/images/3B.webp',
-      '/Owen2.0-Test/images/3C.webp',
-    ],
+    title: 'Bus Door',
+    images: ['Bus Door (2).jpg'],
   },
   {
     number: '04',
-    title: 'Structural Steel Mezzanine Build',
-    description:
-      'Custom steel column and floor framing installation to maximize second-story storage space, complete with safety handrails and access stairs.',
-    stages: [
-      '/Owen2.0-Test/images/4A.webp',
-      '/Owen2.0-Test/images/4B.webp',
-      '/Owen2.0-Test/images/4C.webp',
+    title: 'Deck Structure',
+    images: [
+      'Deck structure (1).jpg',
+      'Deck structure (2).jpg',
+      'Deck structure (3).jpg',
+      'Deck structure (4).jpg',
+    ],
+  },
+  {
+    number: '05',
+    title: 'Forklift Jib',
+    images: ['Forklift Jib (1).jpg', 'Forklift Jib (2).jpg'],
+  },
+  {
+    number: '06',
+    title: 'Frame as per Customer Request',
+    images: ['Frame as per customer request (2).jpg'],
+  },
+  {
+    number: '07',
+    title: 'Gate Repairs',
+    images: [
+      'Gate Repairs (1).jpg',
+      'Gate Repairs (2).jpg',
+      'Gate Repairs (4).jpg',
+      'Gate Repairs (5).jpg',
+    ],
+  },
+  {
+    number: '08',
+    title: 'Letterbox',
+    images: [
+      'Letterbox (1).jpg',
+      'Letterbox (2).jpg',
+      'Letterbox (3).jpg',
+      'Letterbox (4).png',
+      'Letterbox (5).jpg',
+    ],
+  },
+  {
+    number: '09',
+    title: 'Safety Rails',
+    images: [
+      'Safety Rails (1).jpg',
+      'Safety Rails (2).jpg',
+      'Safety Rails (3).jpg',
+      'Safety Rails (4).jpg',
+    ],
+  },
+  {
+    number: '10',
+    title: 'Security Gate',
+    images: [
+      'Sercurity gate before and after (1).jpg',
+      'Sercurity gate before and after (2).jpg',
+    ],
+  },
+  {
+    number: '11',
+    title: 'Small Jobs',
+    images: [
+      'Small Jobs (0).jpg',
+      'Small Jobs (1).jpg',
+      'Small Jobs (2).jpg',
+      'Small Jobs (3).jpg',
+      'Small Jobs (4).jpg',
+      'Small Jobs (5).jpg',
+      'Small Jobs (6).jpg',
+      'Small Jobs (7).jpg',
+      'Small Jobs (8).jpg',
+    ],
+  },
+  {
+    number: '12',
+    title: 'Trailer Modifications',
+    images: [
+      'Trailer Modifications (1).jpg',
+      'Trailer Modifications (2).jpg',
+      'Trailer Modifications (3).jpg',
+    ],
+  },
+  {
+    number: '13',
+    title: 'Welding',
+    images: ['Weld (1).jpg', 'Weld (2).jpg'],
+  },
+  {
+    number: '14',
+    title: 'Shipping Container Modifications',
+    images: [
+      'shipping container modifications (1).jpg',
+      'shipping container modifications (2).jpg',
+      'shipping container modifications (3).jpg',
+      'shipping container modifications (4).jpg',
+      'shipping container modifications (5).jpg',
+      'shipping container modifications (6).jpg',
+      'shipping container modifications (7).jpg',
+      'shipping container modifications (8).jpg',
     ],
   },
 ];
 
+function getImageLabel(filename: string) {
+  const filenameWithoutExtension = filename.replace(/\.[^.]+$/, '').toLowerCase();
+
+  if (/^before(?:\s*\(\d+\))?$/.test(filenameWithoutExtension)) return 'Before';
+  if (/^after(?:\s*\(\d+\))?$/.test(filenameWithoutExtension)) return 'After';
+
+  return null;
+}
+
 export function Gallery() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-secondary pb-24 pt-36">
       <div
@@ -93,7 +180,7 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="columns-1 gap-6 md:columns-2">
           {projects.map((project, index) => (
             <motion.article
               key={project.number}
@@ -101,62 +188,79 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
-              className="group relative overflow-hidden border-2 border-border bg-background transition-colors duration-300 hover:border-primary"
+              className="group relative mb-6 inline-block w-full break-inside-avoid overflow-hidden border border-border bg-background transition-colors duration-300 hover:border-primary"
             >
-              <div className="absolute right-3 top-3 z-10 font-mono text-xs text-primary/40">
+              <div className="absolute right-3 top-3 z-10 font-mono text-xs text-primary/70">
                 {project.number}
               </div>
 
-              {'beforeAfter' in project ? (
-                <div className="grid grid-cols-2 gap-px bg-border">
-                  {[
-                    { label: 'Before', src: project.beforeAfter.before },
-                    { label: 'After', src: project.beforeAfter.after },
-                  ].map((image) => (
-                    <div key={image.label} className="relative aspect-[4/3] overflow-hidden bg-background">
-                      <img
-                        src={image.src}
-                        alt={`${project.title} - ${image.label}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                      <span className="absolute bottom-3 left-3 border border-primary/60 bg-background/90 px-3 py-1 font-mono text-xs uppercase tracking-wider text-primary">
-                        {image.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-3 gap-px bg-border">
-                  {project.stages.map((src, stageIndex) => (
-                    <div key={src} className="relative aspect-[4/3] overflow-hidden bg-background">
-                      <img
-                        src={src}
-                        alt={`${project.title} - build stage ${stageIndex + 1}`}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="grid grid-cols-4 gap-px bg-border">
+                {project.images.map((filename, imageIndex) => {
+                  const label = getImageLabel(filename);
+                  const isOnlyImage = project.images.length === 1;
+                  const isCenteredLastImage =
+                    project.images.length > 1 &&
+                    project.images.length % 2 !== 0 &&
+                    imageIndex === project.images.length - 1;
 
-              <div className="p-6">
-                <p className="mb-2 text-xs uppercase tracking-widest text-primary">
-                  {'beforeAfter' in project ? 'Before & After' : 'Build Process'}
-                </p>
+                  return (
+                    <div
+                      key={filename}
+                      className={`relative aspect-[4/3] overflow-hidden bg-background ${
+                        isOnlyImage
+                          ? 'col-span-4'
+                          : isCenteredLastImage
+                            ? 'col-span-2 col-start-2'
+                            : 'col-span-2'
+                      }`}
+                    >
+                      <img
+                        src={`${import.meta.env.BASE_URL}images/Gallery/${encodeURIComponent(filename)}`}
+                        alt={`${label ? `${label} photo` : project.title} - ${project.title}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                      {label && (
+                        <span className="absolute bottom-3 left-3 border border-primary/60 bg-background/90 px-3 py-1 font-mono text-xs uppercase tracking-wider text-primary">
+                          {label}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="border-t border-border px-5 py-4">
                 <h2
-                  className="mb-3 text-2xl text-white transition-colors group-hover:text-primary"
+                  className="text-xl text-white transition-colors group-hover:text-primary"
                   style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}
                 >
                   {project.title}
                 </h2>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
               </div>
 
               <div className="absolute bottom-0 right-0 h-0 w-0 border-b-[40px] border-b-primary/20 border-l-[40px] border-l-transparent transition-colors group-hover:border-b-primary/40" />
             </motion.article>
           ))}
+        </div>
+
+        <div className="mt-16 border-2 border-primary/30 bg-background p-8 text-center">
+          <h2
+            className="mb-3 text-3xl text-white"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+          >
+            Have a project in mind?
+          </h2>
+          <p className="mx-auto mb-6 max-w-2xl text-muted-foreground">
+            Tell us what you need made, repaired or installed and request a no-obligation quote.
+          </p>
+          <button
+            onClick={() => navigate('/?section=contact')}
+            className="border-2 border-primary bg-primary px-8 py-3 uppercase tracking-wider text-background transition-all hover:bg-primary/90"
+            style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem' }}
+          >
+            Request a Quote
+          </button>
         </div>
       </div>
     </section>
