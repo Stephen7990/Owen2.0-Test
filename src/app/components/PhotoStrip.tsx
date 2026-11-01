@@ -1,11 +1,13 @@
 import { motion } from 'motion/react';
+import { LightboxImage } from './LightboxImage';
 
 type PhotoStripProps = {
   images: [string, string];
   label: string;
+  fit?: 'contain' | 'cover';
 };
 
-export function PhotoStrip({ images, label }: PhotoStripProps) {
+export function PhotoStrip({ images, label, fit = 'contain' }: PhotoStripProps) {
   return (
     <div
       role="region"
@@ -25,11 +27,10 @@ export function PhotoStrip({ images, label }: PhotoStripProps) {
             transition={{ duration: 0.55, delay: index * 0.1 }}
             className="group relative aspect-[4/3] overflow-hidden border-2 border-primary/30 bg-secondary transition-colors duration-300 hover:border-primary"
           >
-            <img
+            <LightboxImage
               src={`${import.meta.env.BASE_URL}images/${encodeURIComponent(image)}`}
               alt="Affordable Fix & Fab project photo"
-              loading="lazy"
-              className="h-full w-full object-cover"
+              className={`h-full w-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`}
             />
           </motion.figure>
         ))}

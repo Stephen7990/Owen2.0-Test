@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
+import { LightboxImage } from './LightboxImage';
 
 const projects = [
   {
@@ -121,6 +122,26 @@ const projects = [
   },
 ];
 
+const fillFrameGalleryImages = new Set([
+  'Deck structure (3).jpg',
+  'Forklift Jib (1).jpg',
+  'Gate Repairs (2).jpg',
+  'Gate Repairs (5).jpg',
+  'Safety Rails (1).jpg',
+  'Safety Rails (2).jpg',
+  'Safety Rails (3).jpg',
+  'Trailer Modifications (2).jpg',
+  'Trailer Modifications (3).jpg',
+  'Weld (1).jpg',
+  'Weld (2).jpg',
+  'shipping container modifications (1).jpg',
+  'shipping container modifications (2).jpg',
+  'shipping container modifications (3).jpg',
+  'shipping container modifications (4).jpg',
+  'shipping container modifications (5).jpg',
+  'shipping container modifications (8).jpg',
+]);
+
 function getImageLabel(filename: string) {
   const filenameWithoutExtension = filename.replace(/\.[^.]+$/, '').toLowerCase();
 
@@ -214,11 +235,14 @@ export function Gallery() {
                             : 'col-span-2'
                       }`}
                     >
-                      <img
+                      <LightboxImage
                         src={`${import.meta.env.BASE_URL}images/Gallery/${encodeURIComponent(filename)}`}
                         alt={`${label ? `${label} photo` : project.title} - ${project.title}`}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        className={`h-full w-full ${
+                          fillFrameGalleryImages.has(filename)
+                            ? 'object-cover'
+                            : 'object-contain'
+                        }`}
                       />
                       {label && (
                         <span className="absolute bottom-3 left-3 border border-primary/60 bg-background/90 px-3 py-1 font-mono text-xs uppercase tracking-wider text-primary">

@@ -14,8 +14,9 @@ function HomePage() {
       <Hero />
       <PhotoStrip images={["Top.webp", "Top (2).webp"]} label="Featured project photos" />
       <Services />
+      <PhotoStrip images={["MID.webp", "Mid (2).webp"]} label="Service project photos" />
       <About />
-      <PhotoStrip images={["Bottom.webp", "BOttom (2).webp"]} label="More project photos" />
+      <PhotoStrip images={["Bottom.webp", "BOttom (2).webp"]} label="More project photos" fit="cover" />
       <Contact />
     </>
   );

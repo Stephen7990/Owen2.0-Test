@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Hammer, Wrench, Factory, Fence, Truck, Clock3 } from 'lucide-react';
-import { PhotoStrip } from './PhotoStrip';
 
 const services = [
   {
@@ -93,10 +92,6 @@ export function Services() {
             metalwork solutions.
           </p>
         </motion.div>
-
-        <div className="mb-12 -mx-6">
-          <PhotoStrip images={['MID.webp', 'Mid (2).webp']} label="Workshop project photos" />
-        </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
