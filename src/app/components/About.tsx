@@ -49,26 +49,22 @@ export function About() {
 
             <div className="space-y-4 text-muted-foreground mb-8">
               <p className="text-lg leading-relaxed">
-                With over 13 years of hands-on experience in the
-                industry, Affordable Fix & Fab has built a
-                reputation for delivering top-quality
-                boilermaking and fabrication services at
-                competitive prices.
+                Affordable Fix & Fab is a locally owned and 
+                operated metal fabrication and welding business based in South Australia.
+
               </p>
               <p className="leading-relaxed">
-                Whether it's a small repair job or a major
-                fabrication project, we bring the same level of
-                precision, professionalism, and dedication to
-                every task.
-                insured, and equipped to handle projects of any
-                scale.
+                With over 13 years of industry experience, 
+                we specialise in custom steel fabrication, welding, 
+                repairs and modifications for residential, commercial and industrial customers. 
               </p>
               <p className="leading-relaxed">
-                We pride ourselves on honest communication,
-                reliable service, and work that stands the test
-                of time. When you choose us, you're choosing a
-                partner who genuinely cares about getting the
-                job done right.
+                From small repairs and one-off fabrications to larger custom projects, we take pride in producing practical, well-made work with attention to detail.
+
+              </p>
+                <p className="leading-relaxed">
+                We believe in honest communication, reliable service and delivering work that meets your requirements.
+                
               </p>
             </div>
 
@@ -77,13 +73,13 @@ export function About() {
               {[
                 {
                   icon: Award,
-                  text: "Fully Licensed & Insured",
+                  text: "Fully Insured",
                 },
-                { icon: Clock, text: "South Australia Based" },
-                { icon: Users, text: "Experienced Team" },
+                { icon: Clock, text: "Locally Owned & Operated" },
+                { icon: Users, text: "13+ Years Industry Experience" },
                 {
                   icon: CheckCircle2,
-                  text: "Accurate Workmanship Commitment",
+                  text: "Quality Workmanship",
                 },
               ].map((item, i) => (
                 <div

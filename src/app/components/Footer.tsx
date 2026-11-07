@@ -56,13 +56,12 @@ export function Footer() {
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Professional boilermaking and fabrication services you can trust. Quality work at
-              affordable rates.
+              Fabrication, welding and repair services. Quality workmanship at affordable prices.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
               {[
-                { icon: Facebook, href: "https://www.facebook.com/AffordableEquipmentHire" },
+                { icon: Facebook, href: "https://www.facebook.com/AffordableFixandFab" },
                 { icon: MessageCircle, href: "https://www.messenger.com/t/566534916" },
               ].map((social, i) => (
                 <a
@@ -118,11 +117,12 @@ export function Footer() {
               Our Services
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Welding Services</li>
-              <li>Metal Fabrication</li>
-              <li>Repairs & Maintenance</li>
-              <li>Structural Steel</li>
-              <li>Safety Rails & Guards</li>
+              <li>Custom steel fabrication</li>
+              <li>Welding repairs</li>
+              <li>Commercial & industrial fabrication</li>
+              <li>Gates, frames & steelwork</li>
+              <li>Mobile welding & Installation</li>
+              <li>Clear communication with and realistic timeframes </li>
             </ul>
           </div>
 
@@ -172,20 +172,27 @@ export function Footer() {
             <p className="text-muted-foreground text-sm text-center md:text-left">
               © {currentYear} Affordable Fix & Fab. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <button className="hover:text-primary transition-colors">Privacy Policy</button>
+            <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground md:items-end">
               <button className="hover:text-primary transition-colors">
                 Terms of Service
               </button>
+              <Link
+                to="/privacy-policy"
+                className="hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
 
           {/* Technical mark */}
           <div className="mt-6 text-center">
-            <div className="inline-flex items-center gap-2 text-xs text-primary/40 font-mono">
-              <div className="w-2 h-2 border border-primary/40" />
-              <span>LICENSED & INSURED BOILERMAKER</span>
-              <div className="w-2 h-2 border border-primary/40" />
+            <div className="text-xs text-primary/40 font-mono">
+              <span className="text-center leading-relaxed">
+                <span className="block">Affordable Fix &amp; Fab</span>
+                <span className="block">Steel Fabrication | Welding | Repairs</span>
+                <span className="block">Locally owned and operated in South Australia.</span>
+              </span>
             </div>
           </div>
         </div>

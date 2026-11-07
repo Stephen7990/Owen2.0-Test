@@ -70,6 +70,17 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
+            <Link
+              to="/"
+              onClick={() => {
+                if (location.pathname === '/') scrollToSection('hero');
+              }}
+              className="text-white hover:text-primary transition-colors uppercase tracking-wider relative group"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.15rem', fontWeight: 600 }}
+            >
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
             {[
               { label: 'Services', id: 'services' },
               { label: 'About', id: 'about' },
@@ -114,6 +125,17 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-6 pb-4 border-t border-primary/30 pt-6 space-y-4">
+            <Link
+              to="/"
+              onClick={() => {
+                setIsMenuOpen(false);
+                if (location.pathname === '/') scrollToSection('hero');
+              }}
+              className="block w-full text-left text-white hover:text-primary transition-colors uppercase tracking-wider text-xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 600 }}
+            >
+              Home
+            </Link>
             {[
               { label: 'Services', id: 'services' },
               { label: 'About', id: 'about' },

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Link } from 'react-router';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -125,7 +126,7 @@ export function Contact() {
                   >
                     0412 677 236
                   </a>
-                  <p className="text-sm text-muted-foreground mt-1">Here When You Need Us</p>
+                  <p className="text-sm text-muted-foreground mt-1">Speak Directly With Us</p>
                 </div>
               </div>
             </div>
@@ -150,7 +151,7 @@ export function Contact() {
                   >
                     affordablefixandfab@outlook.com
                   </a>
-                  <p className="text-sm text-muted-foreground mt-1">Response within 24hrs</p>
+                  <p className="text-sm text-muted-foreground mt-1">Typically responds within 1 business day</p>
                 </div>
               </div>
             </div>
@@ -311,7 +312,10 @@ export function Contact() {
                   )}
 
                   <p className="text-center text-muted-foreground text-sm">
-                    We respect your privacy. Your information will never be shared.
+                    We respect your privacy.{' '}
+                    <Link to="/privacy-policy" className="text-primary hover:underline">
+                      Read our Privacy Policy.
+                    </Link>
                   </p>
                 </form>
               ) : (

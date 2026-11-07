@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router';
 
 export function Hero() {
   return (
@@ -36,7 +37,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl-mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +46,7 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-2 border-primary/50">
             <span className="text-primary uppercase tracking-widest text-sm font-semibold">
-              Professional Boilermaking Services
+              Professional Metal Fabrication Services
             </span>
           </div>
 
@@ -71,8 +72,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-muted-foreground max-w-2xl mx-auto mb-10 text-lg md:text-xl"
           >
-            Expert welding, fabrication, and repair services. From structural steel to
-            custom metalwork, we deliver quality craftsmanship at affordable rates.
+            Custom steel fabrication, welding and repair services for residential, commercial and industrial customers.
+            From one-off custom steelwork and modifications to repairs and on-site welding, we provide practical solutions built to your specifications.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -102,6 +103,15 @@ export function Hero() {
             >
               View Services
             </button>
+
+            <Link
+              to="/gallery"
+              className="px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-all border-2 border-primary uppercase tracking-wider group relative overflow-hidden"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.25rem', fontWeight: 600 }}
+            >
+              <span className="relative z-10">View Our Work</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </Link>
           </motion.div>
 
           {/* Stats */}
@@ -109,23 +119,20 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto"
+            className="mt-12 md:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto"
           >
             {[
-              { value: '13+', label: 'Years Experience' },
-              { value: '200+', label: 'Projects Completed' },
-              { value: 'SA', label: 'Based & Operated' },
+              '13+ Years Experience',
+              'Locally Owned & Operated',
+              'Fully Insured',
             ].map((stat, i) => (
               <div key={i} className="relative">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary" />
                 <div
-                  className="text-primary mb-1"
-                  style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 5vw, 3rem)' }}
+                  className="text-primary px-1 leading-tight"
+                  style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(1rem, 3vw, 2.5rem)' }}
                 >
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground text-sm uppercase tracking-wider">
-                  {stat.label}
+                  {stat}
                 </div>
               </div>
             ))}

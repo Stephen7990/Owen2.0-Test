@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
 import { Gallery } from "./components/Gallery";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { PhotoStrip } from "./components/PhotoStrip";
@@ -29,6 +30,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />
