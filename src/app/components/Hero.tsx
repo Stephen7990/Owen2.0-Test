@@ -43,13 +43,6 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-background/80 backdrop-blur-sm border-2 border-primary/50">
-            <span className="text-primary uppercase tracking-widest text-sm font-semibold">
-              Professional Metal Fabrication Services
-            </span>
-          </div>
-
           {/* Main Heading */}
           <h1
             className="mb-6 text-white"

@@ -173,9 +173,12 @@ export function Footer() {
               © {currentYear} Affordable Fix & Fab. All rights reserved.
             </p>
             <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground md:items-end">
-              <button className="hover:text-primary transition-colors">
+              <Link
+                to="/terms-of-service"
+                className="hover:text-primary transition-colors"
+              >
                 Terms of Service
-              </button>
+              </Link>
               <Link
                 to="/privacy-policy"
                 className="hover:text-primary transition-colors"

@@ -137,7 +137,7 @@ export function About() {
               {/* Technical annotations */}
               <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-2 border border-primary/50">
                 <div className="text-primary font-mono text-xs">
-                  CERTIFIED WELDER
+                  QUALIFIED FABRICATOR AND WELDER
                 </div>
               </div>
 

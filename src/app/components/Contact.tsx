@@ -184,10 +184,10 @@ export function Contact() {
                 Why Choose Us?
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>✓ no-obligation quotes</li>
-                <li>✓ Fully insured & certified</li>
+                <li>✓ No-obligation quotes</li>
+                <li>✓ Fully insured</li>
                 <li>✓ Competitive pricing</li>
-                <li>✓ Quality workmanship guaranteed</li>
+                <li>✓ Quality workmanship</li>
               </ul>
             </div>
           </motion.div>

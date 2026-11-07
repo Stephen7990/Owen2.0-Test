@@ -5,6 +5,7 @@ import { Services } from "./components/Services";
 import { About } from "./components/About";
 import { Gallery } from "./components/Gallery";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { TermsOfService } from "./components/TermsOfService";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { PhotoStrip } from "./components/PhotoStrip";
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />
