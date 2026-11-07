@@ -269,12 +269,11 @@ export function Contact() {
                       className="w-full px-4 py-3 bg-secondary border-2 border-border focus:border-primary focus:outline-none transition-colors text-white"
                     >
                       <option value="">Select a service...</option>
-                      <option value="welding">Welding Services</option>
-                      <option value="fabrication">Metal Fabrication</option>
-                      <option value="repairs">Repairs & Maintenance</option>
-                      <option value="structural">Structural Steel</option>
-                      <option value="safety">Safety Rails & Guards</option>
-                      <option value="other">Other</option>
+                      <option value="new-fabrication-welding">New fabrication &amp; welding</option>
+                      <option value="repairs-maintenance">Repairs &amp; maintenance</option>
+                      <option value="modifications-alterations">Modifications &amp; alterations</option>
+                      <option value="commercial-industrial-work">Commercial / industrial work</option>
+                      <option value="other-not-sure">Other / Not sure</option>
                     </select>
                   </div>
 
