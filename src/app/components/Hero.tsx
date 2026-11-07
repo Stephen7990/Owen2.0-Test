@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="hero" className="relative min-h-screen flex items-start sm:items-center justify-center overflow-hidden pt-24 sm:pt-20">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -37,7 +37,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl-mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl-mx-auto px-6 py-8 sm:py-0 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

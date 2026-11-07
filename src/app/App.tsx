@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router";
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
@@ -25,6 +26,16 @@ function HomePage() {
 }
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/" && new URLSearchParams(location.search).has("section")) {
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.search]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
