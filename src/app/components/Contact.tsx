@@ -24,10 +24,11 @@ export function Contact() {
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
         headers: {
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
       });
 
       if (response.ok) {
@@ -203,7 +204,7 @@ export function Contact() {
             <div className="bg-background border-2 border-primary/30 p-8">
               {!isSubmitted ? (
                 <form
-                  action="https://formspree.io/f/xojzvnbw"
+                  action="https://formsubmit.co/ajax/affordablefixandfab@outlook.com"
                   method="POST"
                   onSubmit={handleSubmit}
                   className="space-y-6"
@@ -273,7 +274,7 @@ export function Contact() {
                       <option value="repairs-maintenance">Repairs &amp; maintenance</option>
                       <option value="modifications-alterations">Modifications &amp; alterations</option>
                       <option value="commercial-industrial-work">Commercial / industrial work</option>
-                      <option value="other-not-sure">Other / Not sure</option>
+                      <option value="other-not-sure">Other / not sure</option>
                     </select>
                   </div>
 
