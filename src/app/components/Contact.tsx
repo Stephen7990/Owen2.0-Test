@@ -93,7 +93,7 @@ export function Contact() {
             Request A Quote
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We aim to respond to enquiries within one business day.
+            We aim to respond to enquiries within two business day.
           </p>
         </motion.div>
 
@@ -151,7 +151,7 @@ export function Contact() {
                   >
                     affordablefixandfab@outlook.com
                   </a>
-                  <p className="text-sm text-muted-foreground mt-1">Typically responds within 1 business day</p>
+                  <p className="text-sm text-muted-foreground mt-1">Typically responds within 2 business day</p>
                 </div>
               </div>
             </div>
