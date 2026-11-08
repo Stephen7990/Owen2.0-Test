@@ -152,7 +152,7 @@ export function Contact() {
                   >
                     affordablefixandfab@outlook.com
                   </a>
-                  <p className="text-sm text-muted-foreground mt-1">Typically responds within 2 business day</p>
+                  <p className="text-sm text-muted-foreground mt-1"></p>
                 </div>
               </div>
             </div>
