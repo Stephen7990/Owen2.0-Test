@@ -26,16 +26,6 @@ export function Hero() {
         }}
       />
 
-      {/* Corner measurements - Blueprint style */}
-      <div className="absolute top-24 left-6 text-primary/40 font-mono text-xs tracking-wider">
-        <div>X: 0.00</div>
-        <div>Y: 0.00</div>
-      </div>
-      <div className="absolute top-24 right-6 text-primary/40 font-mono text-xs tracking-wider text-right">
-        <div>SCALE: 1:1</div>
-        <div>REV: 01</div>
-      </div>
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl-mx-auto px-6 py-8 sm:py-0 text-center">
         <motion.div
