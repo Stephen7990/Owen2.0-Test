@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/Owen2.0-Test/',
+  base: '/',
 
   plugins: [
     figmaAssetResolver(),
