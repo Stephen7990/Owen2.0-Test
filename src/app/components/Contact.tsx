@@ -339,7 +339,7 @@ export function Contact() {
                     Quote Request Sent!
                   </h3>
                   <p className="text-muted-foreground text-lg">
-                    Thanks for reaching out. We'll get back to you within 24 hours.
+                    Thanks for reaching out. We'll get back to you within 2 days.
                   </p>
                 </motion.div>
               )}
