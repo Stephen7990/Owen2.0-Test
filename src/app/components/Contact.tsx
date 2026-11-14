@@ -341,6 +341,7 @@ export function Contact() {
                   <p className="text-muted-foreground text-lg">
                     Thanks for reaching out. We'll get back to you within 2 days.
                   </p>
+                  // This is a comment
                 </motion.div>
               )}
             </div>
